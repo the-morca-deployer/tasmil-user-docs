@@ -15,12 +15,11 @@ jobs:
 
       - name: Mirror and trigger deploy
         env:
-          PAT: ${{ secrets.DEPLOYER_PAT }}
+          GH_TOKEN: ${{ secrets.DEPLOYER_PAT }}
         run: |
-          PAT_CLEAN=$(printf '%s' "$PAT" | tr -d '[:space:]')
-
           git config user.name "the-morca-deployer"
           git config user.email "the-morca-deployer@users.noreply.github.com"
           git commit --allow-empty -m "chore: deploy"
 
-          git -c "url.https://${PAT_CLEAN}@github.com/.insteadOf=https://github.com/" push https://github.com/the-morca-deployer/tasmil-user-docs.git HEAD:refs/heads/main --force
+          gh auth setup-git
+          git push https://github.com/the-morca-deployer/tasmil-user-docs.git HEAD:refs/heads/main --force
