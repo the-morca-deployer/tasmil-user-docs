@@ -39,7 +39,6 @@ export default function Layout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen bg-fd-background text-fd-foreground">
-        {/* @ts-expect-error fumadocs 16.8.11: the `next` RootProviderProps loses `children` through ComponentProps<>, but it is the provider wrapping the app and renders children at runtime. */}
         <RootProvider theme={{ defaultTheme: "dark" }}>
           {children}
         </RootProvider>

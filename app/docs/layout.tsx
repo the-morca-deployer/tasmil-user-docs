@@ -31,7 +31,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         },
       ]}
       sidebar={{
-        // @ts-expect-error fumadocs 16.8.11: SidebarOptions omits `footer` from its type, but the notebook sidebar slot accepts and renders it at runtime.
         footer: (
           <>
             <span data-sidebar-footer="" className="hidden" />
