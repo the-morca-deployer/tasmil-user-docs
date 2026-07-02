@@ -6,13 +6,13 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <>
         <img
-          src="/brand/logo.png"
+          src="/brand/logo.svg"
           alt="Tasmil"
           width={32}
           height={32}
         />
         <span
-          className="bg-[length:200%_100%] bg-gradient-to-r from-[#b5eaff] via-white to-[#00bfff] bg-clip-text font-semibold text-transparent text-lg"
+          className="bg-[length:200%_100%] bg-gradient-to-r from-[#67e8f9] via-white to-[#0ea5e9] bg-clip-text font-semibold text-transparent text-lg"
           style={{ animation: "shimmer-text 3s linear infinite" }}
         >
           Tasmil Finance
@@ -30,10 +30,10 @@ export const baseOptions: BaseLayoutProps = {
       type: "custom",
       children: (
         <a
-          href="https://zyf.ai"
+          href="https://tasmil.finance"
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-gradient-to-b from-[#B5EAFF] to-[#00BFFF] px-4 py-2 text-sm font-bold text-black transition-all duration-300 hover:scale-105 hover:from-[#C5F0FF] hover:to-[#1CCFFF]"
+          className="inline-flex items-center justify-center rounded-full bg-gradient-to-b from-[#67e8f9] to-[#0ea5e9] px-4 py-2 text-sm font-bold text-black transition-all duration-300 hover:scale-105 hover:from-[#7DEDFA] hover:to-[#38BDF8]"
         >
           Launch App
         </a>

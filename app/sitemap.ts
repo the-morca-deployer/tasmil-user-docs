@@ -1,7 +1,7 @@
 import { source } from '@/lib/source';
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://docs.tasmil-finance.xyz';
+const BASE_URL = 'https://docs.tasmil.finance';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = source.getPages().map((page) => ({
