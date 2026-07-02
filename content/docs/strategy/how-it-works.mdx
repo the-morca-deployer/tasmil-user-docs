@@ -1,0 +1,49 @@
+---
+title: How It Works
+description: Keeper wallets, APY, the price oracle, fees — and what's testnet-only
+---
+
+<TLDR>
+Strategies are on-chain agents that grow their net asset value (NAV); your share grows with it. You interact through a non-custodial keeper wallet, and APY is an honest annualization of real on-chain NAV. On testnet, the yield itself is simulated.
+</TLDR>
+
+## Keeper wallet & session keys
+
+Each user gets their own **keeper wallet** — a non-custodial Soroban smart wallet. When you activate a strategy, a **bot session key** is whitelisted for only that strategy's contract and functions (deposit, withdraw, harvest). The bot can run the strategy but can't send your funds anywhere else. A keeper runs **one active strategy at a time**; switching strategies replaces the allow-list, which is why it takes a fresh activation.
+
+## NAV and APY
+
+A strategy's **NAV** (net asset value) is the total value of everything it holds, priced to USD. When the NAV per share rises, every holder's position grows with it.
+
+**APY** is an honest annualization of that real on-chain NAV over time — not a made-up range:
+
+> APY = ((latest NAV / earlier NAV) ^ (365 / days elapsed) − 1) × 100
+
+Cards and detail pages show a **7-day average APY**; the leaderboard ranks strategies by APY and updates roughly every 30 minutes.
+
+## The price oracle (Reflector)
+
+Strategies read a live on-chain **Reflector** price feed through an adapter contract. The oracle marks NAV to real market value and is compared against the DEX price to decide when to swap. Strategies tagged **"REAL ORACLE"** are priced by this live feed.
+
+## Fees
+
+- **Performance fee** — set by the publisher, charged only on *new* profit above the high-water mark.
+- **Platform fee** — 0 on the demo.
+
+Publishers claim accrued fees on-chain from their Publishing dashboard.
+
+## Harvest
+
+On mainnet, "harvest" is the strategy realizing profit (its profitable swap). It is **automated** — neither depositors nor publishers harvest by hand.
+
+## Testnet reality
+
+<Callout type="warn">
+This marketplace is a **testnet demo**. Please keep in mind:
+
+- **Test funds only.** You use free test XLM from the faucet — it has **no real monetary value**.
+- **Simulated yield.** Instead of earning real market profit, a bot drips yield at controlled per-tier rates, so strategies show a positive APY for the demo.
+- **Paper profit.** Because the demo swaps into a favorable seeded testnet pool, the shown gains don't fully realize on withdrawal.
+- **XLM only.** Publishing is limited to XLM as the base asset on testnet.
+- **One strategy per wallet.** A keeper runs a single active strategy at a time.
+</Callout>

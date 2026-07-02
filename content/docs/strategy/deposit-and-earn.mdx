@@ -1,0 +1,41 @@
+---
+title: Deposit & Earn
+description: Browse strategies, set up a keeper wallet, deposit, track, and withdraw
+---
+
+<Callout type="warn">
+Testnet demo — funds are test XLM with no real value and yield is simulated. See [Testnet reality](/docs/strategy/how-it-works#testnet-reality).
+</Callout>
+
+<TLDR>
+Pick a strategy, connect your wallet, activate a non-custodial keeper wallet (two signatures), deposit XLM, and let the strategy run. Withdraw anytime — there's no lockup.
+</TLDR>
+
+## 1. Browse and pick a strategy
+
+Open the **Marketplace** and filter by asset, risk (Conservative / Balanced / Aggressive), or sort by APY, TVL, or newest. Each card shows the strategy's APY, total value locked (TVL), fee, and number of users.
+
+Open a strategy to see its details: current APY (a 7-day average), TVL, performance fee, how the strategy works, its APY history, and the list of active participants.
+
+{/* ![Strategy detail page](/docs/strategy/strategy-detail.png) */}
+
+## 2. Connect and activate your keeper wallet
+
+<Steps>
+<Step>**Connect your wallet.** Until you connect, the panel shows a prompt to view your position and deposit.</Step>
+<Step>**Activate.** Setup takes **two signatures** — the first deploys your own **keeper wallet** (a smart wallet with the bot's session key built in); the second activates the strategy. Returning users switching strategies just re-configure and activate.</Step>
+</Steps>
+
+<Callout type="info">
+Your keeper wallet is **non-custodial** — you stay in control. The bot's session key is scoped to only the strategy you activated, so it can run that strategy but can't move your funds elsewhere. A keeper runs **one active strategy at a time**, so depositing into a different strategy re-runs the activation.
+</Callout>
+
+## 3. Deposit
+
+Open the deposit panel for your active strategy, pick an asset (XLM or USDC — non-base assets are auto-swapped to the strategy's token), and enter an amount. You **sign one transaction to fund your keeper**, then the bot **automatically deposits it into the strategy**.
+
+{/* ![Deposit panel](/docs/strategy/deposit.png) */}
+
+## 4. Track and withdraw
+
+Your position shows **Deposited / Value / P&L**, and the Dashboard → **Investing** tab lists everything you're in. To withdraw, use the same panel's **Withdraw** toggle — the bot pulls your funds from the strategy back to your wallet. There's **no lockup**.

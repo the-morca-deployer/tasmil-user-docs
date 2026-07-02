@@ -1,0 +1,5 @@
+{
+  "title": "Strategy Marketplace",
+  "icon": "Store",
+  "pages": ["index", "deposit-and-earn", "publish-a-strategy", "how-it-works"]
+}

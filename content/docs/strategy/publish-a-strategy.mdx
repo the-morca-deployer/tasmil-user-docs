@@ -1,0 +1,49 @@
+---
+title: Publish a Strategy
+description: Launch your own automated strategy with a four-step wizard and earn a performance fee
+---
+
+<Callout type="warn">
+Testnet demo — strategies deploy on Stellar **testnet** only, and yield is simulated. See [Testnet reality](/docs/strategy/how-it-works#testnet-reality).
+</Callout>
+
+<TLDR>
+Publishers launch an automated strategy with a four-step wizard, sign one transaction to deploy it, and it goes live immediately. You earn a performance fee on new profit and manage everything from the Publishing dashboard.
+</TLDR>
+
+## The publish wizard
+
+Open **Publish** and fill in four steps:
+
+<Steps>
+<Step>**Identity.** Your publisher name, bio, website, and X handle. Your connected wallet address is your on-chain publisher identity.</Step>
+<Step>**Details.** Name your strategy and choose its type (below), base asset (XLM on testnet), risk tier, performance fee, and tags.</Step>
+<Step>**Review.** Check everything before deploying.</Step>
+<Step>**Sign.** Sign one transaction to deploy and publish. The strategy goes **live and depositable right away**.</Step>
+</Steps>
+
+{/* ![Publish strategy wizard](/docs/strategy/publish-wizard.png) */}
+
+## Strategy types
+
+| Type | What it does |
+|------|--------------|
+| **Auto-Swap · Soroswap** | Swaps into the target token when the DEX price beats the oracle's fair value |
+| **Auto-Swap · Aquarius** | The same opportunistic swap, routed through the Aquarius AMM |
+| **DCA · scheduled** | Dollar-cost-averages into the target on a fixed schedule |
+
+You also set a **risk tier** (Conservative / Balanced / Aggressive), which controls the strategy's trade-size presets, and a **performance fee** — charged only on *new* profit above the high-water mark.
+
+## Managing your strategies
+
+From the Dashboard → **Publishing** tab you can:
+
+- **Pause or resume** a strategy
+- Monitor its **APY, TVL, and users**
+- **Claim performance fees** you've earned (accrued on-chain), with a claim history
+
+{/* ![Publishing dashboard](/docs/strategy/publishing-dashboard.png) */}
+
+<Callout type="info">
+Harvesting is automated by the platform — you don't harvest manually. As a strategy's value grows, your performance fee accrues and you claim it whenever you like.
+</Callout>
